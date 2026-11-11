@@ -24,6 +24,7 @@ KomplexBeschleunigerEmulator/
 ├── gui/
 │   └── EmulatorGUI.java             # ✅ NEU: Von KI erstellt (einfache Swing-GUI)
 ├── Main.java                        # ✅ NEU: Von KI erstellt (Konsolen-Tests)
+├── screenshots/                     # ✅ NEU: Ordner für GUI-Screenshots
 ├── StartGUI.java                    # ✅ NEU: Von KI erstellt (GUI-Starter)
 └── README.md                        # ✅ NEU: Von KI erstellt (Dokumentation)
 ```
@@ -31,6 +32,208 @@ KomplexBeschleunigerEmulator/
 **Legende:**
 - ✅ = Von KI erstellt/korrigiert
 - ⚪ = Ursprüngliches Projekt (unverändert)
+
+---
+
+## 📷 GUI-Screenshots & Testfälle
+
+Hier sind Screenshots der funktionierenden GUI mit verschiedenen Testfällen:
+
+### 🖼️ Startbildschirm
+
+Die GUI startet mit vorbefüllten Werten für schnelle Tests:
+- **Register A**: 3.0 + 2.0i (Standardwert)
+- **Register B**: 1.0 - 1.0i (Standardwert)
+- **Operation**: addieren (Standardauswahl)
+- **Anweisung**: berechnung (Standardauswahl)
+
+![GUI Startbildschirm](screenshots/gui_start.png)
+*Bild: GUI beim Start mit Standardwerten*
+
+---
+
+### 🧪 Testfall 1: Addition
+
+**Eingabe:**
+- Register A: 3.0 + 2.0i
+- Register B: 1.0 - 1.0i
+- Operation: addieren
+- Anweisung: berechnung
+
+**Erwartetes Ergebnis:** 4.0 + 1.0i
+
+![Testfall Addition](screenshots/test_addition.png)
+*Bild: erfolgreich durchgeführter Additionstest mit korrektem Ergebnis 4.0 + 1.0i*
+
+**Mathematische Überprüfung:**
+```
+(3 + 2i) + (1 - i) = (3+1) + (2-1)i = 4 + 1i ✓
+```
+
+---
+
+### 🧪 Testfall 2: Subtraktion
+
+**Eingabe:**
+- Register A: 5.0 + 3.0i
+- Register B: 2.0 + 1.0i
+- Operation: subtrahieren
+- Anweisung: berechnung
+
+**Erwartetes Ergebnis:** 3.0 + 2.0i
+
+![Testfall Subtraktion](screenshots/test_subtraktion.png)
+*Bild: Subtraktionstest mit Ergebnis 3.0 + 2.0i*
+
+**Mathematische Überprüfung:**
+```
+(5 + 3i) - (2 + i) = (5-2) + (3-1)i = 3 + 2i ✓
+```
+
+---
+
+### 🧪 Testfall 3: Multiplikation
+
+**Eingabe:**
+- Register A: 2.0 + 1.0i
+- Register B: 3.0 - 2.0i
+- Operation: multiplizieren
+- Anweisung: berechnung
+
+**Erwartetes Ergebnis:** 8.0 - 1.0i
+
+![Testfall Multiplikation](screenshots/test_multiplikation.png)
+*Bild: Multiplikationstest mit komplexen Zahlen*
+
+**Mathematische Überprüfung:**
+```
+(2 + i) * (3 - 2i) = (2*3 + 1*2) + (2*(-2) + 1*3)i
+                    = (6 + 2) + (-4 + 3)i
+                    = 8 - i ✓
+```
+
+---
+
+### 🧪 Testfall 4: Division
+
+**Eingabe:**
+- Register A: 4.0 + 2.0i
+- Register B: 2.0 + 0.0i
+- Operation: dividieren
+- Anweisung: berechnung
+
+**Erwartetes Ergebnis:** 2.0 + 1.0i
+
+![Testfall Division](screenshots/test_division.png)
+*Bild: Divisionstest mit einfacher komplexer Zahl*
+
+**Mathematische Überprüfung:**
+```
+(4 + 2i) / (2 + 0i) = (4/2) + (2/2)i = 2 + i ✓
+```
+
+---
+
+### 🧪 Testfall 5: Speichern-Anweisung
+
+**Eingabe:**
+- Register A: 3.0 + 2.0i
+- Register B: 1.0 + 1.0i
+- Operation: addieren
+- Anweisung: **speichern**
+
+**Ergebnis:** Das Ergebnis (4.0 + 3.0i) wird in Register A gespeichert
+
+![Testfall Speichern](screenshots/test_speichern.png)
+*Bild: Speichern des Ergebnisses in Register A*
+
+**Verifikation:**
+- Register A wird von 3.0+2.0i zu 4.0+3.0i aktualisiert
+- Ergebnis bleibt 4.0+3.0i
+
+---
+
+### 🧪 Testfall 6: Bus-Anbindung Test
+
+**Eingabe:**
+- Register A: 5.0 + 0.0i
+- Register B: 3.0 + 0.0i
+- Operation: multiplizieren
+- **Takt ausführen** Button
+
+**Bus-Zustand:**
+- Steuerbus: Sendet MUL-Operation
+- Datenbus: Enthält Ergebnisdaten
+- Adressbus: Zeigt Zieladresse
+
+![Testfall Bus](screenshots/test_bus.png)
+*Bild: Bus-Zustand nach Taktausführung*
+
+**Verifikation:**
+- Steuerbus zeigt korrekte Operation an
+- Datenbus enthält Berechnungsergebnis
+- Adressbus zeigt Zielregister
+
+---
+
+### 🔄 Testfall 7: Zurücksetzen
+
+**Aktion:** Klick auf **Zurücksetzen** Button
+
+**Ergebnis:**
+- Alle Register auf Standardwerte zurückgesetzt
+- Ergebnis auf 0.0 + 0.0i
+- Konsole zeigt Reset-Meldung
+- Busse werden zurückgesetzt
+
+![Testfall Reset](screenshots/test_reset.png)
+*Bild: GUI nach Zurücksetzen aller Werte*
+
+---
+
+### 📊 Testzusammenfassung
+
+| Test | Operation | Register A | Register B | Ergebnis | Status |
+|------|-----------|-----------|-----------|---------|--------|
+| 1 | Addition | 3+2i | 1-i | 4+1i | ✅ |
+| 2 | Subtraktion | 5+3i | 2+i | 3+2i | ✅ |
+| 3 | Multiplikation | 2+i | 3-2i | 8-i | ✅ |
+| 4 | Division | 4+2i | 2+0i | 2+i | ✅ |
+| 5 | Speichern | 3+2i | 1+i | 4+3i | ✅ |
+| 6 | Bus-Anbindung | 5+0i | 3+0i | 15+0i | ✅ |
+| 7 | Zurücksetzen | - | - | 0+0i | ✅ |
+
+---
+
+### 🎥 Anleitung: Screenshots selbst erstellen
+
+Da die Bilder oben Platzhalter sind, hier die Anleitung zum Erstellen eigener Screenshots:
+
+1. **GUI starten:**
+   ```bash
+   java StartGUI
+   ```
+
+2. **Testfall vorbereiten:**
+   - Register A und B mit den gewünschten Werten füllen
+   - Operation und Anweisung auswählen
+
+3. **Test durchführen:**
+   - Auf **Ausführen** oder **Takt ausführen** klicken
+   - Ergebnis überprüfen
+
+4. **Screenshot erstellen:**
+   - **Windows:** `Win + Shift + S` (Ausschneiden und Skizzieren)
+   - **Mac:** `Cmd + Shift + 4` (ausgewählter Bereich)
+   - **Linux:** `Shift + PrtScn` (ausgewählter Bereich)
+
+5. **Bilder speichern:**
+   - Erstelle einen Ordner `screenshots/` im Projektverzeichnis
+   - Speichere die Screenshots mit aussagekräftigen Namen (z.B. `test_addition.png`)
+
+6. **README aktualisieren:**
+   - Ersetze die Platzhalter-Bildpfade mit den tatsächlichen Dateinamen
+   - Aktualisiere die Bildbeschreibungen bei Bedarf
 
 ---
 

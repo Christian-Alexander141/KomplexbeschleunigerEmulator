@@ -1,0 +1,4 @@
+PLATZHALTER: test_speichern.png
+=
+Ersetze diese Datei mit einem echten Screenshot von der GUI.
+Testfall: test_speichern

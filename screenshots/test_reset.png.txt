@@ -1,0 +1,4 @@
+PLATZHALTER: test_reset.png
+=
+Ersetze diese Datei mit einem echten Screenshot von der GUI.
+Testfall: test_reset

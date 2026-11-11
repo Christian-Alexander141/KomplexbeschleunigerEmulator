@@ -1,0 +1,16 @@
+PLATZHALTER: gui_start.png
+=============================
+
+Dies ist ein Platzhalter für das Bild: gui_start.png
+
+ANLEITUNG:
+----------
+1. Erstelle einen Screenshot der GUI beim Start
+2. Speichere ihn als gui_start.png in diesem Ordner
+3. Lösche diese .txt-Datei
+
+Der Screenshot sollte zeigen:
+- Die GUI mit Standardwerten (Register A: 3.0+2.0i, Register B: 1.0-1.0i)
+- Das Eingabe-Panel links
+- Das Ergebnis-Panel rechts
+- Die Buttons unten
