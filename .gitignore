@@ -1,0 +1,57 @@
+# Komplexzahl-Beschleuniger Emulator - .gitignore
+# ================================================
+
+# Kompilierte Class-Dateien
+*.class
+
+# Ausführbare JAR-Dateien
+*.jar
+
+# Batch-Skripte (Windows)
+*.bat
+
+# Shell-Skripte (wenn nicht Teil des Quellcodes)
+# *sh - aber start.sh ist im Repository
+
+# Desktop-Dateien (Linux)
+*.desktop
+
+# IDE-spezifische Dateien
+.idea/
+.vscode/
+*.iml
+*.ipr
+*.iws
+
+# Eclipse
+.bin/
+*.launch
+.settings/
+
+# NetBeans
+nbproject/
+
+# Build-Tools
+build/
+dist/
+target/
+
+# Log-Dateien
+*.log
+
+# Temporäre Dateien
+*.tmp
+*~
+.DS_Store
+
+# Platzhalter-Dateien in screenshots/
+screenshots/*.txt
+
+# Node.js (falls verwendet)
+node_modules/
+
+# Java Doc
+javadoc/
+
+# Test-Ergebnisse
+*.output
