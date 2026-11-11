@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Komplexzahl-Beschleuniger Emulator
+Comment=Emulator für Komplexzahl-Beschleuniger mit Bus-Anbindung
+Exec=java -jar /home/alex/Schreibtisch/komplexBeschleunigerEmulator/KomplexBeschleunigerEmulator.jar
+Icon=java
+Terminal=false
+Categories=Education;Utility;
+Path=/home/alex/Schreibtisch/komplexBeschleunigerEmulator/
